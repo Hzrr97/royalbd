@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.royaltea.dao.OrderMapper">
+	<!-- <resultMap type="order" id="OrderMapper">
+		<result property="orderId" column="EMP_ID"/>
+		<result property="orderLid" column="EMP_LID"/>
+		<result property="roleName" column="ROLE_NAME"/>
+		<result property="orderSex" column="EMP_SEX"/>
+		<result property="orderPwd" column="EMP_PWD"/>
+		<result property="orderName" column="EMP_NAME"/>
+		<result property="orderSalary" column="EMP_SALARY"/>
+		<result property="orderWorktime" column="EMP_WORKTIME"/>
+		<result property="orderBirthtime" column="EMP_BIRTHTIME"/>
+		<result property="orderTel" column="EMP_TEL"/>
+	</resultMap>  -->
+    <!-- 查询所有order resultMap="OrderMapper"-->  
+    <select id="queryAll" resultType="order"  >  
+        select * from orders order by O_TIME desc
+    </select>
+    
+    <select id="queryOi" parameterType="string" resultType="orderinfo"  >  
+        select * from orderinfo left join food on orderinfo.F_ID=food.F_ID
+        left join foodtype on food.FT_ID=foodType.FT_ID where O_ID=#{oId}
+    </select>
+    
+    <select id="queryKey" parameterType="orderkey" resultType="order"  >  
+        select * from orders where 1=1  
+        <if test="dId !='' and dId !=null">
+            and OD_ID=#{dId}
+        </if>
+        <if test="oId !='' and oId !=null">
+            and O_ID like CONCAT('%',#{oId},'%')
+        </if>
+        <if test="status==1">
+            and O_STATUS = 0
+        </if>
+        <if test="status==2">
+            and O_STATUS = 1
+        </if>
+        <if test="out==1">
+            and O_OUT = 0
+        </if>
+        <if test="out==2">
+            and O_OUT != 1
+        </if>
+        <if test="time==1">
+            and to_days(O_TIME) = to_days(now())
+        </if>
+        <if test="time==2">
+            and TO_DAYS( NOW( ) ) - TO_DAYS(O_TIME) &lt;= 1 
+        </if>
+        <if test="time==3">
+            and DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= date(O_TIME)
+        </if>
+        <if test="time==4">
+            and DATE_SUB(CURDATE(), INTERVAL 30 DAY) &lt;= date(O_TIME)
+        </if>
+        <if test="time==5">
+            and DATE_SUB(CURDATE(), INTERVAL 90 DAY) &lt;= date(O_TIME)
+        </if>
+         order by O_TIME desc
+    </select>
+    
+    <delete id="deleteById" parameterType="string">
+    	delete from orders where O_ID=#{oId}
+    </delete>
+    
+    <delete id="deleteOiById" parameterType="string">
+    	delete from orderinfo where O_ID=#{oId}
+    </delete>
+    
+    <update id="updateStatus" >
+    	update orders set O_STATUS=#{1}
+    	where O_ID=#{0}
+    </update>
+    
+</mapper>
