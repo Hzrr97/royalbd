@@ -111,7 +111,7 @@ public class DeskController {
     @RequestMapping(value="/desk-showQR",method=RequestMethod.POST)
     @ResponseBody
     public String deskShowQR(Integer dId, String host, HttpServletRequest request){
-    	String url = "http://"+host+":8081/royaltea/shop?dId="+dId;
+    	String url = "http://royaltea.hzryxx.cn/shop?dId="+dId;
         String path = request.getSession().getServletContext().getRealPath("/")+ "upload/";
         String fileName = dId+".jpg";
         deskService.createQrCode(url, path, fileName);

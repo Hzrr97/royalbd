@@ -5,7 +5,7 @@
 	<artifactId>royalbd</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>maven-royaltea-web Maven Webapp</name>
+	<name>royalbd Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<!-- Spring版本号 -->
@@ -156,7 +156,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>maven-royaltea-web</finalName>
+		<finalName>royalbd</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -164,6 +164,7 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>utf8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>

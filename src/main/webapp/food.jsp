@@ -106,9 +106,9 @@
 												<table class="table table-bordered mb-0 text-nowrap">
 													<tr>
 														<th>#</th>
+														<th>图片</th>
 														<th>菜名</th>
 														<th>菜品</th>
-														<th>图片</th>
 														<th>价格</th>
 														<th>状态</th>
 														<th>描述</th>

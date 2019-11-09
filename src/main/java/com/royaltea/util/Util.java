@@ -4,12 +4,12 @@ import java.util.UUID;
 
 public class Util {
 	public static void getUUID(){
-        //Ëæ»úÉú³ÉÒ»Î»ÕûÊı
+        //éšæœºç”Ÿæˆä¸€ä½æ•´æ•°
         int random = (int) (Math.random()*9+1);
         String valueOf = String.valueOf(random);
-        //Éú³ÉuuidµÄhashCodeÖµ
+        //ç”Ÿæˆuuidçš„hashCodeå€¼
         int hashCode = UUID.randomUUID().toString().hashCode();
-        //¿ÉÄÜÎª¸ºÊı
+        //å¯èƒ½ä¸ºè´Ÿæ•°
         if(hashCode<0){
             hashCode = -hashCode;
         }

@@ -6,13 +6,13 @@ import com.royaltea.pojo.Person;
 
 public interface PersonMapper {
     /**
-     * ²åÈëÒ»Ìõ¼ÇÂ¼
+     * æ’å…¥ä¸€æ¡è®°å½•
      * @param person
      */
     void insert(Person person);
     
     /**
-     * ²éÑ¯ËùÓĞ
+     * æŸ¥è¯¢æ‰€æœ‰
      * @return
      */
     List<Person> queryAll();

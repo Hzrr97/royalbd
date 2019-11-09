@@ -31,7 +31,7 @@
 								<a href="pwd" class="dropdown-item has-icon">
 									<i class="ion ion-gear-a"></i> 密码修改
 								</a>
-								<a href="login.jsp" class="dropdown-item has-icon">
+								<a href="login" class="dropdown-item has-icon">
 									<i class="ion-ios-redo"></i> 注销
 								</a>
 							</div>

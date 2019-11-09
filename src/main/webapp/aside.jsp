@@ -16,7 +16,7 @@
 						<li class="slide">
 							<a class="side-menu__item"  data-toggle="slide" href="#"><i class="side-menu__icon fa fa-desktop"></i><span class="side-menu__label">主页</span><i class="angle fa fa-angle-right"></i></a>
 							<ul class="slide-menu">
-								<li><a class="slide-item"  href="index.html"><span>统计</span></a></li>
+								<!-- <li><a class="slide-item"  href="index.html"><span>统计</span></a></li> -->
 								<li><a class="slide-item" href="info"><span>个人信息</span></a></li>
 								<li><a class="slide-item" href="pwd"><span>密码修改</span></a></li>
 							</ul>

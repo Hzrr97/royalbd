@@ -22,12 +22,13 @@ public void doFilter(ServletRequest sreq, ServletResponse response,
 	HttpServletResponse  rp= (HttpServletResponse)response;
     String uri = hrequest.getRequestURI();
     
-    if (uri.indexOf("login.jsp")>0 ||uri.indexOf("emp-login")>0 || uri.indexOf("error.jsp")>0||uri.indexOf("upload")>0){
+    if (uri.indexOf("login")>0 ||uri.indexOf("emp-login")>0 || 
+    	uri.indexOf("error.jsp")>0||uri.indexOf("upload")>0||uri.indexOf("assets")>0){
     	chain.doFilter(sreq, response);
     }else {
     	Emp emp=(Emp)rq.getSession().getAttribute("emp");
 	    if(null==emp){  
-	      rp.sendRedirect("/royalbd/error.jsp");
+	      rp.sendRedirect("/error.jsp");
 	    }else{
 	    chain.doFilter(sreq, response);
 	    }

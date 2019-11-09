@@ -56,6 +56,12 @@ public class EmpController {
         return "emp";
     }
     
+    @RequestMapping(value="/login",method=RequestMethod.GET)
+    public String login(){
+        
+        return "login";
+    }
+    
     @RequestMapping(value="/emp-add",method=RequestMethod.POST)
     public String empAdd(ModelMap map,Emp emp,String empWorktime1,String empBirthtime1){
     	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

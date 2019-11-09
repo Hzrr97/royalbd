@@ -196,7 +196,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">名字：</label>
 								<div class="col-sm-9">
-									<input type="text" required="required"  class="form-control" name="dName" placeholder="请输入菜品名称"
+									<input type="text" required="required"  class="form-control" name="dName" placeholder="请输入名字"
 									pattern="^[\u4e00-\u9fa5]{1,6}$" oninput="setCustomValidity('');" oninvalid="setCustomValidity('请输入中文');" />
 									<input type="hidden" id="planId" required="required"  class="form-control" name="dId" />
 								</div>
@@ -288,7 +288,7 @@
 		function showQR(obj){
 			var dId1 = $(obj).data('did');
 			
-			var host1 = '192.168.1.5';
+			var host1 = 'royaltea.hzryxx.cn';
 			$.ajax({
                 type:"POST",
                 url:"desk-showQR",

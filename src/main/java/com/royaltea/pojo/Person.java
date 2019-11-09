@@ -2,7 +2,7 @@ package com.royaltea.pojo;
 
 
 /**
- * person ʵ��
+ * person ΚµΜε
  * @author Administrator
  *
  */

@@ -7,7 +7,7 @@ import com.royaltea.pojo.Person;
 public interface PersonService {
 
     /**
-     * 加载全部的person
+     * 鍔犺浇鍏ㄩ儴鐨刾erson
      * @return
      */
     List<Person> loadPersons();
